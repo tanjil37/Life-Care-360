@@ -19,7 +19,7 @@
             <input type="submit" class="btn btn-primary" name="login" value="Sign IN">
         </form>
         <hr />
-        <a href="{{ route('register') }}">Signup/Registration</a>
+        <a href="{{ route('register') }}">Signup / Registration</a>
     </div><!-- #login-form -->
 @endsection
 

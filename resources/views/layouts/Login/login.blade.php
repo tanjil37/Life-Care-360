@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Login Page</title>
+    <title>Authentication Page</title>
 
 
     <link rel="stylesheet" href="/libs/bower/font-awesome/css/font-awesome.min.css">
@@ -21,21 +21,21 @@
     </div>
     <div class="simple-page-wrap">
         <div class="simple-page-logo animated swing">
-
             <span style="color: white"><i class="fa fa-gg"></i></span>
-            <span style="color: white">Life Care 360 - Login</span>
-
-        </div><!-- logo -->
-
+            <span class="text-white text-2xl font-bold">
+                @if (Route::currentRouteName() === 'login')
+                    Doctor - Login
+                @elseif (Route::currentRouteName() === 'register')
+                    Doctor - Register
+                @else
+                    Doctor - Auth
+                @endif
+        </div>
         @yield('content')
-
         <div class="simple-page-footer">
             @yield('footer')
-
-        </div><!-- .simple-page-footer -->
-
-
-    </div><!-- .simple-page-wrap -->
+        </div>
+    </div>
 </body>
 
 </html>
