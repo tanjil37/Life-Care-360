@@ -8,9 +8,13 @@ use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\bloodFlowController;
+use App\Http\Controllers\checkupController;
+use App\Http\Controllers\userController;
 
 Route::get('/doctors', [DoctorsController::class, 'index'])->name('doctors');
 Route::get('/bloodFlow', [bloodFlowController::class, 'index'])->name('bloodFlow');
+Route::get('/checkup', [checkupController::class, 'index'])->name('checkup');
+Route::get('/user-login', [userController::class, 'index'])->name('user-login');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DoctorController::class, 'index'])->name('dashboard');

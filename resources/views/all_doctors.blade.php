@@ -11,7 +11,7 @@
 
 <body class="bg-gradient-to-br from-red-50 to-blue-50 min-h-screen">
     <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Doctors</h1>
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Doctors Management</h1>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach($doctors as $doctor)

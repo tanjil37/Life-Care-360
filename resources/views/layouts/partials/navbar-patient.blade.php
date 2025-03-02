@@ -28,7 +28,7 @@
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="/checkup">Check Up</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/doctors">Doctors</a>
@@ -64,11 +64,9 @@
                     </button>
                     <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 hidden">
                         <a href="{{ route('login') }}"
-                            class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-150">Doctor
-                            Login</a>
-                        <a href="#"
-                            class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-150">User
-                            Login</a>
+                            class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-400 transition duration-150">Doctor</a>
+                        <a href="/user-login"
+                            class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-400 transition duration-150">User</a>
                     </div>
                     </li>
                 @endauth
