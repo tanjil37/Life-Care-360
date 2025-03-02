@@ -36,18 +36,64 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/bloodFlow">Blood flow</a>
                 </li>
+
                 <li class="nav-item">
                     <!-- Authentication check -->
                     @auth
                         <a class="nav-link" href="/dashboard"><span class="text-red-600">Dr.
                             </span>{{ Auth::user()->name }}</a>
                     @else
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    @endauth
+                    <li class="relative inline-block">
+                        <!-- Dropdown Button -->
+                        <button id="dropdownButton"
+                            class="bg-red-600 text-white my-2 px-2 py-2 rounded-md hover:bg-red-400 focus:outline-none flex items-center transition duration-200">
+                    <li class="nav-item">
+                        <!-- Authentication check -->
+                        @auth
+                            <a class="nav-link" href="/dashboard"><span class="text-red-600">Dr.
+                                </span>{{ Auth::user()->name }}</a>
+                        @else
+                            <div>Login</div>
+                        @endauth
+                    </li>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                        </path>
+                    </svg>
+                    </button>
+                    <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 hidden">
+                        <a href="{{ route('login') }}"
+                            class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-150">Doctor
+                            Login</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-150">User
+                            Login</a>
+                    </div>
+                    </li>
+                @endauth
                 </li>
-            </ul>
+
         </div>
     </div>
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('dropdownButton');
+        const menu = document.getElementById('dropdownMenu');
+
+        button.addEventListener('click', function() {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    });
+</script>
